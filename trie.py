@@ -7,6 +7,11 @@ How can I trim down the amount of space taken up by visited?
 class Trie(object):
     def __init__(self):
         self.root_node = {}
+
+    def print_trie(self):
+        import json 
+        print(json.dumps(self.root_node, indent = 2))
+   
     def add_word(self, word):
         current_node = self.root_node
         is_new_word = False
@@ -32,10 +37,6 @@ class Trie(object):
         return is_new_word
     # --> For answering, ternary search tree, a bloom filter are also great answers 
 
-    def print_trie(self):
-        import json 
-        print(json.dumps(self.root_node, indent = 2))
-
 
 
 print("Running trie")
@@ -44,6 +45,6 @@ t.add_word("google.com")
 t.add_word("google.com/example")
 t.add_word("google.com/test")
 t.add_word("yahoo.com/terrr")
-t.add_word("yahoo.com/example")
+t.add_word("yahoo.com/example") 
 
 t.print_trie()
